@@ -1,0 +1,213 @@
+<htmL>
+ <head>
+    <style>
+        .grid-item-big
+         {
+            background-color: Dodgerblue;
+            padding:20px;
+            font-size: 25px;
+
+         } 
+         .grid-item-small
+         {
+           background-color:Dodgerblue;
+           text-align: center;
+           font-size: 20px;
+         }  
+         .container-blue{
+            height :300px;
+            width:300px;
+  
+            display:inline;
+            background-color:blue;
+            align-self: center; 
+            border-radius:5%;
+            border-width: 100%;
+            border-color:aqua;
+            text-align:center;
+            font-size:30;
+           }      
+           .container-red{
+            height :300px;
+            width:300px;
+  
+            display:inline;
+            background-color:red;
+            align-self: center; 
+            border-radius:5%;
+            border-width: 100%;
+            border-color:aqua;
+            text-align:center;
+            font-size:30;
+           } 
+           table.th
+           {
+             empty-cells:hide;
+              width:1000px;
+              height:1000px; 
+           }
+           tr.th
+           {
+            empty-cells:show;
+           }
+           .button
+            {
+               background-color: #4CAF50;
+               border: none;
+               color: white;
+               padding: 15px 32px;
+               text-align: center;
+               text-decoration: none;
+               display: inline-block;
+               font-size: 16px;
+               margin: 4px 2px;
+               cursor: pointer;
+             }
+           </style>
+         </head>
+       <body>
+         <div class="container-blue" id="bluebox">
+          There are 2 blue tokens
+          <div class="container-red" id="redbox">
+            There are 2 red tokens
+        </div>
+        </div>
+        <center>
+        <table class="th" border="1">
+         <tr class="th">
+             <td id="p1"> </td>  
+             <td id="p2"> </td>  
+             <td id="p3"> </td>  
+             <td id="p4"> </td>  
+             <td id="p5"> </td>  
+             <td id="p6"> </td>     
+             <td id="p7"> </td>    
+             <td id="p8"> </td>
+         </tr>        
+         <tr>
+            <td id="28" empty-cells="show"> </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>     
+            <td > </td>    
+            <td id="p9"> </td>
+        </tr>   
+        <tr>
+            <td id="p27"> </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>     
+            <td > </td>    
+            <td id="p10"> </td>
+        </tr>       
+        <tr>
+            <td id="p26"> </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>     
+            <td > </td>    
+            <td id="p11"> </td>
+        </tr> 
+        <tr>
+            <td id="p25"> </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>     
+            <td > </td>    
+            <td id="p12"></td>
+        </tr>     
+        <tr>
+            <td id="p24"></td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>     
+            <td > </td>    
+            <td id="p13"> </td>
+        </tr>
+        <tr>
+            <td id="p23"></td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>  
+            <td > </td>     
+            <td > </td>    
+            <td id="p14"> </td>
+        </tr>
+        <tr class="th">
+            <td id="p22"> </td>  
+            <td id="p21"> </td>  
+            <td id="p20"> </td>  
+            <td id="p19"> </td>  
+            <td id="p18"> </td>  
+            <td id="p17"> </td>     
+            <td id="p16"> </td>    
+            <td id="p15"> </td>
+        </tr>
+    </table>
+   </center> 
+    <form>
+    <button class="button"  onclick="ludored">Play Red</button>
+    <button class="button"  onclick="ludored">Play Blue</button>
+    </form>
+   <script>
+         ludored() 
+         {
+           var x,r1,r2,b1,b2;
+           var r11,r22;
+           var r1s,r2s,b1s,b2s;
+           var cntr,cntb;
+           let cntr=0;
+           let cntb=0;
+           x=Math.floor(Math.random()*6)+1;
+           if (x==6&&cntr==0)
+           {
+              cntr=cntr+1;
+              r1=1;
+              r11=num.toString(r1);
+              r1s=p.concat(r11);
+              document.getElementById('r1s').innerHTML='B';
+           }
+           if (x!=6&&cntr>0&&r1!=30&&r1<=26)
+           {
+            document.getElementById(r1s).innerHTML="";
+            r1=r1+x;
+            r1s=num.toString(r1);
+            document.getElementById(r1s).innerHTML="B";  
+           }
+           if (x==6&&cntr==1)
+           {
+            r2=1; 
+            r2s=num.toString(r2);
+            document.getElementById(r2s).innerHTML="B";
+            cntr=2;
+           }
+           if (x==6&&cntr==2&&r1!=30&&r1<=26)
+           {
+            r1s=num.toString(r1);
+            document.getElementById(r1s).innerHTML="";
+            r1=r1+x;
+            r1s=num.toString(r1);
+            document.getElementById(r1s).innerHTML="B";  
+           }
+           else if(x==6&&cntr==2&&r2!=30&&r2<=26)
+           {
+             document.getelementById(r2).innerHTML="";
+             r2=r2+x;
+             document.getElementbyId(r2).innerHTML="B";
+
+           }
+        }   
+    </script>
+  </body>
+  </htmL>      
